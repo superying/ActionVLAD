@@ -31,7 +31,7 @@ mkdir $FRAME_DIR
 mkdir $LIST_DIR
 
 # 1. extract frames, change q:v to qscale for older ffmpeg
-ffmpeg -i $vpath -qscale:v 1 $TMPDIR/frames/image_%05d.jpg < /dev/null
+ffmpeg -i $vpath -q:v 1 $TMPDIR/frames/image_%05d.jpg < /dev/null
 
 # 2. Set up the dataset file
 echo "frames $(ls $FRAME_DIR | wc -l) -1" > $LIST_DIR/test_split1.txt
